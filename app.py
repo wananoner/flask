@@ -3,10 +3,12 @@ from flask import Flask, flash, render_template, request
 app = Flask(__name__)
 app.secret_key = '123'
 
+
 @app.route('/')
 def hello_world():
     flash("Hello, my girl")
     return render_template("index.html")
+
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -27,9 +29,11 @@ def login():
         flash("用户名或密码错误")
         return render_template("index.html")
 
+
 @app.errorhandler(404)
 def not_found(e):
     return render_template("404.html")
+
 
 if __name__ == '__main__':
     app.run()
