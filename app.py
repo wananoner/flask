@@ -1,4 +1,4 @@
-from flask import Flask, flash, render_template, request
+from flask import Flask, flash, render_template, request, abort
 
 app = Flask(__name__)
 app.secret_key = '123'
@@ -15,7 +15,6 @@ def login():
     form = request.form
     username = form.get('username')
     password = form.get('password')
-
     if not username:
         flash("请输入用户名")
         return render_template("index.html")
@@ -32,8 +31,8 @@ def login():
 
 @app.errorhandler(404)
 def not_found(e):
-    return render_template("404.html")
+    return render_template("404.html"), 404
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
