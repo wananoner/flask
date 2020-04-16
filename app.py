@@ -5,7 +5,7 @@ app.secret_key = '123'
 
 
 @app.route('/')
-def hello_world():
+def home():
     flash("Hello, my girl")
     return render_template("index.html")
 
@@ -35,4 +35,4 @@ def not_found(e):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0')
