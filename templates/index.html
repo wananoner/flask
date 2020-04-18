@@ -5,13 +5,15 @@
     <title>Title</title>
 </head>
 <body>
-<h1>My 反日你的</h1>
+<h1>渭南·吴彦祖</h1>
 
-<form action="/login" method="post">
-    <input type="text" name="username">
-    <input type="password" name="password">
-    <input type="submit" value="登陆">
-</form>
+<img src="{{ url_for('static', filename='psb.jfif') }}" alt="你的图片被外星人劫持了～～"/>
+<h1>保定·郭富城</h1>
+
+<img src="{{ url_for('static', filename='ads.jpg') }}" alt="你的图片被外星人劫持了～～"/>
+<h1>宝鸡·金城武</h1>
+
+<img src="{{ url_for('static', filename='w.jpg') }}" alt="你的图片被外星人劫持了～～"/>
 
 <h2>{{ get_flashed_messages()[0] }}</h2>
 </body>
